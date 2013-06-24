@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todolist</title>
+  <%= csrf_meta_tags %>
+  <% if content_for? :css %>
+  	<%= yield :css %>
+  <% else %>
+  	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%end%>
+</head>
+<body>
+	<%= yield %>
+	<% if content_for? :js %>
+	  <%= yield :js %>
+	<% else %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%end%>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  taskname: MyString
+  describe: MyText
+  complete: false
+  create: 2013-06-13
+  status: MyString
+
+two:
+  taskname: MyString
+  describe: MyText
+  complete: false
+  create: 2013-06-13
+  status: MyString

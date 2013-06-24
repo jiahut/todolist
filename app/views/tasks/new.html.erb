@@ -1,0 +1,26 @@
+<%= render partial: "tasks/model", locals: { title: "New Task"}%>
+<script type="text/javascript">
+	$("#task-save-btn").on("click",function(evt){
+		evt.preventDefault();
+		$('body').modalmanager('loading');
+		$.ajax({
+                cache: true,
+                type: "POST",
+                url: "/tasks",
+                data: $('form.new_task').serialize(),
+                async: false
+            })
+		.done(function(){
+			console.log("save task success")
+			$("#task-cancel-btn").click();
+			// $('#task-new-modal').hide();
+       		$('body').modalmanager('removeLoading');
+       		setTimeout(function(){history.go(0)},100);
+		});
+// 		$('form.new_task').submit();
+//		$('#task-new-modal').hide();
+// 		$('body').modalmanager('removeLoading');
+		
+		// return false;
+	});
+</script>
